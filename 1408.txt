@@ -1,0 +1,30 @@
+#include <cstring>
+#include <iomanip>
+#include <iostream>
+using namespace std;
+int main()
+{
+	int k;
+	cin>>k;
+	while(k--)
+	{
+		int n,s,i,a[110];
+		memset(a,0,sizeof(a));
+		cin>>n;
+		for(i=0;i<n;i++)
+		{
+			cin>>s;
+			a[s]++;
+		}
+		
+		int sum=0;
+		double p;
+		for(i=60;i<=100;i++)
+			sum+=a[i];
+		p=(double(sum)/double(n))*100;
+		cout<<setiosflags(ios::fixed)<<setprecision(3);
+		cout<<p<<'%'<<endl;
+		cout<<endl;
+	}	
+	return 0;
+}

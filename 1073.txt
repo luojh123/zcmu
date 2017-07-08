@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n,i;
+	char c;
+	cin>>n;
+	for (i=1;i<=n;i++)
+	{
+		c=getchar();
+		if(c>='A'&&c<='Z')  c=c+32;
+		else if(c>='a'&&c<='z')  c=c-32;
+		putchar(c);
+	}
+	return 0;
+}

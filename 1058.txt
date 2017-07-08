@@ -1,0 +1,21 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+	int a[2000];
+	double s,m;
+	int i,n;
+	while(cin>>n>>m)  //物品个数n ,包的容量m
+	{
+		for (i=0;i<n;i++)
+			cin>>a[i];
+		sort(a,a+n);  //调用sort排序函数，按照重量排序贪心
+		s=0;        //包内现存货品的重量
+		for (i=0;i<n && s+a[i]<=m;i++)	
+			s+=a[i];
+		cout<<i<<endl;
+	}
+	return 0;
+} 

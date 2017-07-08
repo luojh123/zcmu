@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    while(n--)
+    {
+        int f,a,b,c;
+        int sum=0;
+        cin>>f;
+        while(f--)
+        {
+            cin>>a>>b>>c;
+            sum+=a*c;
+        }
+        cout<<sum<<endl;
+    }
+    return 0;
+}

@@ -1,0 +1,39 @@
+#include<iostream>  
+#include<string>
+using namespace std;  
+int main()  
+{  
+	int T;
+	int n,mod_old,mod_even;
+	string s;
+	cin>>T;
+	while(T--)
+	{
+		
+		int i;
+		s.clear();
+		cin>>n>>mod_old>>mod_even;
+		while(n--)
+		{
+			int value,sum=0;
+			int sum_old=0,sum_even=0;
+
+			cin>>s;
+			for(i=0;i<s.length();i=i+2)
+			{
+				sum_old+=s[i];
+			}
+			for(i=1;i<s.length();i=i+2)
+			{
+				sum_even+=s[i];
+			}
+			value=sum_old%mod_old + sum_even%mod_even;
+			for(i=0;i<s.length();i++)
+			{
+				sum+=s[i];
+			}
+			cout<<"("<<value<<","<<sum<<")"<<endl;
+		}
+	}
+	return 0;  
+} 

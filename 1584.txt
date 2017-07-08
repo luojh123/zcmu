@@ -1,0 +1,55 @@
+#include<cmath>
+#include<iomanip>
+#include<iostream>
+using namespace std;
+class Point
+{
+private:
+    float x,y;
+public:
+    Point(float a,float b){x=a;y=b;}
+    Point(){x=0;y=0;}
+    float getx(){return x;}
+    float gety(){return y;}
+    void setP(float m,float n) {x=m;y=n;}
+};
+ 
+class CRect
+{
+private:
+    Point p1,p2;
+public:
+    CRect(){}
+    CRect(Point m,Point n) {p1=m;p2=n;}
+    float RectHeight()
+    {
+        return fabs(p1.gety()-p2.gety());
+    }
+    float RectWidth()
+    {
+        return fabs(p1.getx()-p2.getx());
+    }
+    void SetR(Point m,Point n){p1=m;p2=n;}
+};
+ 
+int main()
+{   
+    Point p1,p2;
+    CRect cr1;
+    float a,b,c,d;
+    float h,w;
+    while(cin>>a>>b>>c>>d)
+    {
+        p1.setP(a,b);
+        p2.setP(c,d);
+        cr1.SetR(p1,p2);
+        h=cr1.RectHeight();
+        w=cr1.RectWidth();
+        cout<<setiosflags(ios::fixed)<<setprecision(2);
+        cout<<"("<<a<<","<<b<<")"<<" ";
+        cout<<"("<<c<<","<<d<<")"<<" ";
+        cout<<2*(h+w)<<" ";
+        cout<<h*w<<endl;
+    }
+    return 0;
+}

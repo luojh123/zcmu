@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std; 
+ 
+int main()
+{
+    int x,n,t;
+    while(cin>>n)
+    {
+        if(n==1 || n%2==0)
+        {
+            cout<<"2^? mod "<<n <<" = 1\n";
+        }
+        else
+        {
+            x=1;
+            t=2;
+            //暴力找到最小的x使得2^x mod n=1
+            while(t%n!=1)
+            {
+                x++;
+                t=t*2%n;
+            }
+            cout<<"2^"<<x<<" mod "<<n<<" = 1\n";
+        }
+    }    
+    return 0;
+}

@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+typedef long long LL;
+LL n,m,p;
+LL power(LL a,LL b){
+    LL ans=1,temp=a%p;
+    while(b){
+        if(b&1) ans=ans*temp%p;
+        temp=temp*temp%p;
+        b>>=1;
+    }
+    return ans;
+}
+LL cal(LL a,LL b){   // Cm(a,b)=(a!/(a-b)!) * (b!)^(p-2)) mod p
+    if(b>a) return 0; // important
+    LL ans=1;
+    for(int i=1;i<=b;i++){
+        LL t1=(a-b+i)%p,t2=i%p;
+        ans=ans*(t1*power(t2,p-2)%p)%p;
+    }
+    return ans;
+}
+/*Lucas(n,m,p)=Cm(n%p,m%p)* Lucas(n/p,m/p,p)
+Lucas(x,0,p)=1;*/
+LL lucas(LL t1,LL t2){
+    if(t2==0) return 1;
+    return cal(t1%p,t2%p)*lucas(t1/p,t2/p)%p;
+}
+int main()
+{
+    //freopen("cin.txt","r",stdin);
+    int t;
+    cin>>t;
+    while(t--){
+        scanf("%lld%lld%lld",&n,&m,&p);
+        printf("%lld\n",lucas(n,m));
+    }
+    return 0;
+}

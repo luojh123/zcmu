@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int fun(int a)
+{
+	int i,s=1;
+	for (i=1;i<=a;i++)
+		s=s*i;
+	return s;
+}
+int main( ) 
+{     
+	int r,i,a,j;     
+	float sum;      
+	cin>>r;      
+	for(i=1;i<=r;i++)  
+	{         
+		cin>>a;     
+		sum=0;   
+		for(j=1;j<=a;j++)   
+		{
+			sum=sum+1.0/fun(j);   
+		}
+		cout<<setiosflags(ios::fixed)<<setprecision(4)<<sum;
+		cout<<endl;
+	} 
+}

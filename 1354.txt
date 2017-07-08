@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main( )
+{
+	int time1,time2,hours,mins;
+	int h1,m1,h2,m2;
+	cin>>time1>>time2;
+	h1=time1/100;
+	m1=time1%100;
+	h2=time2/100;
+	m2=time2%100;
+	if(m2<m1)
+	{
+		m2+=60;
+		h2--;
+	}
+	mins=m2-m1;
+	hours=h2-h1;
+	cout<<"The train journey time is "<< hours<<" hrs "<<mins<<" mins.\n";
+	return 0;
+}

@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int min(int a,int b)
+{
+	return (a<b?a:b);
+}
+int main()
+{
+	int n,i,j,a[5],mini;
+	cin>>n;
+	for(i=1;i<=n;i++)
+	{
+		for(j=1;j<=4;j++)
+		{
+			cin>>a[j];
+		}
+		mini=min(a[1],min(a[2],min(a[3],a[4])));
+		cout<<"min is "<<mini<<endl;
+	}
+	return 0;
+}

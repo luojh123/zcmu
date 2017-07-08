@@ -1,0 +1,22 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int r,i,n,j;
+	double x,s;
+	cin>>r;
+	for(i=1;i<=r;i++)
+	{
+		cin>>x>>n;
+		j=1; s=1;
+		while(j<=n)
+		{
+			j++;
+			s=s*x;
+		}
+		cout<<setiosflags(ios::fixed)<<setprecision(2)<<s;
+		cout<<endl;
+	}
+	return 0;
+}

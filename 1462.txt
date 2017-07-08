@@ -1,0 +1,30 @@
+#include <string> 
+#include <cstring> 
+#include <iostream> 
+using namespace std; 
+int main() 
+{     
+    string a,b;
+    int n,i;     
+    while(cin>>n)     
+    {         
+        int x[26],f=1;         
+        memset(x,0,sizeof(x));         
+        cin>>a;         
+        for(i=0;i<n;i++)
+            x[a[i]-'A']++;            
+        cin>>b;         
+        for(i=0;i<b.length();i++)         
+        {             
+            x[b[i]-'A']--;             
+            if(x[b[i]-'A']<0)             
+            {                 
+                f=0;                 
+                break;             
+            }         
+        }            
+        if(f)  cout<<"Yes"<<endl;            
+        else cout<<"No"<<endl;     
+    }     
+    return 0; 
+} 

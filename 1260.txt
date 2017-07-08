@@ -1,0 +1,27 @@
+#include <cstring>
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a[10005],L,M;
+    while(cin>>L>>M)
+    {
+        int b,e,i,count=0;
+        memset(a,0,sizeof(a));
+        while(M--)
+        {
+            cin>>b>>e;
+            for(i=b;i<=e;i++)
+            {
+                a[i]=1;
+            }
+        }
+        for(i=0;i<=L;i++)
+            {
+                if(a[i]==1)
+                    count++;
+            }
+        cout<<L+1-count<<endl;
+    }
+    return 0;
+}

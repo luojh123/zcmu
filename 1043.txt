@@ -1,0 +1,30 @@
+#include<string>
+#include<iostream>
+using namespace std;
+int main()
+{	
+	string a;
+	int n;
+	while(cin>>a>>n)
+	{
+		bool f=1;
+		int i;
+		if(n>(a.length()-2))  
+		{
+			f=0;
+			cout<<"0\n";
+		}
+		else
+		{
+			for(i=0;i<a.length();i++)
+				if(a[i]=='.')
+				{
+					cout<<a[i+n]<<endl;
+					f=0;
+					break;
+				}
+		}
+		if(f) cout<<"0\n";
+	}
+	return 0;
+}

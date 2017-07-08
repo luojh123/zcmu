@@ -1,0 +1,23 @@
+#include <cstring>
+#include <iostream> 
+using namespace std;  
+const int maxn=10000+10;
+int main () 
+{
+    char n[maxn];
+    long long m;
+    int T;
+    cin>>T;
+    while(T--)
+    {
+        while(cin>>n>>m)
+        {
+            int len=strlen(n);
+            int ans=0;
+            for(int i=0;i<len;i++)
+                ans=(int)(((long long)ans*10+n[i]-'0')%m);
+            cout<<ans<<endl;
+        }
+    }
+    return 0;   
+}

@@ -1,0 +1,18 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main( ) 
+{     
+	int n,i,a,j;     
+	float sum;      
+	cin>>n;      
+	for(i=1;i<=n;i++)  
+	{         
+		cin>>a;     
+		sum=0;       
+		for(j=1;j<=a;j++)   
+			sum=sum+1.0/j;           
+		cout<<setiosflags(ios::fixed)<<setprecision(3)<<sum;
+		cout<<endl;
+	} 
+}

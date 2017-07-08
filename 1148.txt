@@ -1,0 +1,18 @@
+#include <iomanip>
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    double a,b;
+    double t,s;
+    while(cin>>a>>b)
+    {
+        t=(a-b)/a;
+        s=-a/3*t*t*t + (a-b)/2*t*t;
+        if (t<0) s=-s;
+        cout<<setiosflags(ios::fixed)<<setprecision(6);
+        cout<<s<<endl;
+    }
+    return 0;
+}

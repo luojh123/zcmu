@@ -1,0 +1,70 @@
+#include<algorithm>
+#include<iostream>
+using namespace std;
+bool cmop(int a,int b)
+{
+     return a>b;
+} 
+int main()
+{
+    int i,j,h,n,king[1005],tianji[1005],kquick,kslow,tquick,tslow,total;
+    while(cin>>n)
+    {
+    total=0;
+      for(i=0;i<n;i++)
+        cin>>tianji[i];
+      for(i=0;i<n;i++)
+        cin>>king[i];
+      sort(king,king+n,cmop);
+      sort(tianji,tianji+n,cmop);
+      //kquick=king's the most quick ,kslow =king's the most slow 
+      kquick=tquick=0;
+      kslow=tslow=n-1;
+      for(i=0;i<n;i++)//i is tianji the most quick
+      {
+         //当田忌最快的马比国王最快的马快时 用田忌最快的马跟国王最快的马比 
+         if(tianji[tquick]>king[kquick])
+         {
+             total+=200;
+             kquick++;
+             tquick++; 
+         } 
+         //当田忌最快的马比国王最快的马慢时 用田忌最慢的马跟国王最快的马比
+         else if(tianji[tquick]<king[kquick])
+         {
+              total-=200;
+              tslow--;
+              kquick++;
+         }
+         else//j is tianji  
+         {
+             for(j=tslow,h=kslow;j>=tquick;j--,h--)
+             {
+                 if(tianji[j]>king[h])//当田忌最慢的马比国王最慢的马快时 用田忌最慢的马跟国王最慢的马比
+                 {
+                     total+=200;
+                     tslow--;
+                     kslow--;
+                 }
+                 else // 用田忌最慢的马跟国王最快的马比
+                 {
+                     if(tianji[j]<king[i])
+                     {
+                         total-=200;
+                         tslow--;
+                         kquick++;
+                     }
+                     tslow=--j;
+                     kslow=h;
+                     break;
+                 }
+             }
+         }
+         if(tquick>tslow)
+           break;
+      }
+       
+      cout<<total<<endl;
+    }
+    return 0;
+}

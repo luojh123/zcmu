@@ -1,0 +1,21 @@
+#include <iostream> 
+using namespace std;  
+int main () 
+{
+	int k,a,n,i,sum,t;  
+	cin>>k;
+	while(k--)
+	{
+		i=1;t=0;sum=0;
+		cin>>a>>n;   
+		while (i<=n)    
+		{
+			t=t+a;           
+			sum=sum+t;        
+			a=a*10;    
+			i++;   
+		}    
+		cout<<sum<<endl; 
+	}
+	return 0;   
+}

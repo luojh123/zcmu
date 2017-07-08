@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int T,n;
+	cin>>T;
+	while(T--)
+	{
+		cin>>n;
+		if(n<=9)
+			cout<<n<<endl;
+		else if(n<=189){
+			if(n%2==0)
+				cout<<"-1\n";
+			else
+				cout<<9+(n-9)/2<<endl;
+		}else if(n<=2889){
+			if((n-189)%3==0)
+				cout<<99+(n-189)/3<<endl;
+			else
+				cout<<"-1\n";
+		}else if(n<=2893){
+			if(n==2893)
+				cout<<"1000\n";
+			else
+				cout<<"-1\n";
+		}
+	}
+	return 0;
+}

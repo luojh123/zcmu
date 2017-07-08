@@ -1,0 +1,14 @@
+#include <string> 
+#include <iostream> 
+using namespace std; 
+int main() 
+{     
+	string a="Jbuu~'Dountsjft'sh'~hr'YQY'&";
+	int i;
+	for(i=0;i<a.length();i++)
+	{
+		a[i]=a[i]^7;
+	}
+	cout<<a<<endl;
+	return 0; 
+} 

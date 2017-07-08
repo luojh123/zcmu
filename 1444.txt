@@ -1,0 +1,19 @@
+#include <cmath>
+#include <iostream>
+using namespace std;
+int main()
+{
+	int T;
+	cin>>T;
+	while(T--)
+	{
+		int P,PA,PB;
+		int A,B;
+		cin>>P>>PA>>PB;
+		A=abs(P-PA);
+		B=abs(P-PB);
+		if(A<B) cout<<'A'<<endl;
+		else cout<<'B'<<endl;
+	}
+	return 0;
+}

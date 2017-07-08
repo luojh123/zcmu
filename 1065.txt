@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int i=1,t,n,a[5];
+	cin>>n;
+	 while(n>0)  
+    {  
+        a[i]=n%10;  
+		i++;
+        n=n/10;  
+    }  
+	 for(i=1;i<=4;i++)
+	 {
+		a[i]=(a[i]+9)%10;
+	 }
+	t=a[1];a[1]=a[2];a[2]=t;
+	t=a[3];a[3]=a[4];a[4]=t;
+	cout<<"The encrypted number is ";
+	for(i=1;i<=4;i++)
+		cout<<a[i];
+	cout<<endl;
+	return 0;
+}

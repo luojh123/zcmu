@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main()
+{
+    int N,i;  
+	int a[26]={0,1,2}; 
+    for (i=3;i<26;i++)
+        a[i]=a[i-1]+a[i-2];
+     while(scanf("%d",&N)==1)
+    {   
+        printf("%d\n",a[N]);
+    }
+    return 0;
+}

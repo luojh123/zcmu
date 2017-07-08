@@ -1,0 +1,31 @@
+#include <string.h>
+#include <iostream>
+using namespace std;
+int main() 
+{
+    char string[100];
+    int i,L;
+	int r;
+	cin>>r;
+	while(r--)
+	{
+		cin>>string;
+		L=strlen(string);
+		if (string[0]=='-') 
+		{
+			for (i=1;i<=L-2;i++) 
+				cout<<string[i]<<" ";
+			cout<<string[L-1];
+			cout<<endl;
+		}
+		else 
+		{
+			for (i=0;i<=L-2;i++) 
+				cout<<string[i]<<" ";
+			cout<<string[L-1];
+			cout<<endl;
+		}
+
+	}
+	  return 0;
+}

@@ -1,0 +1,24 @@
+#include <string>
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    string a,b;    int i;
+    while(cin>>a>>b)
+    {
+        int p,Lb=b.length();
+        while(true)
+        {
+            for(i=0;i<a.length();i++)
+                p=(int)a.find(b,0);
+            if(p== -1) break;
+            else
+            {
+                a.erase(p,Lb);
+            }
+        }
+        cout<<a<<endl;
+    }
+    return 0;
+}

@@ -1,0 +1,25 @@
+#include <vector>
+#include<algorithm>
+#include<iostream>
+using namespace std;
+int main()
+{
+    int N,x,y;
+    while (cin>>N)
+    {
+        vector <int> vx,vy;
+        int maxx,minx,maxy,miny;
+        while (N--)
+        {
+            cin>>x>>y;
+            vx.push_back(x);
+            vy.push_back(y);
+        }
+        maxx=*max_element(vx.begin(),vx.end ());
+        minx=*min_element(vx.begin(),vx.end ());
+        maxy=*max_element(vy.begin(),vy.end ());
+        miny=*min_element(vy.begin(),vy.end ());
+        cout<<(maxx-minx)*(maxy-miny)<<endl;
+    }
+    return 0;
+}

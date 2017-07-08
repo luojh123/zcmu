@@ -1,0 +1,23 @@
+#include <cmath>
+#include <iomanip>
+#include <iostream>
+using namespace std;
+int main()
+{
+	int r,i;
+	cin>>r;
+	while(r--)
+	{
+		double m,n,k = 0;
+		cin>>i;
+		while(i--)
+		{
+			cin>>m>>n;
+			k += n * m;
+			k=(floor(k*10+0.5)/10);
+		}
+		cout<<setiosflags(ios::fixed)<<setprecision(1);
+		cout<<k<<endl;
+	}
+    return 0;
+}

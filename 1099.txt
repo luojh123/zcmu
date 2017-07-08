@@ -1,0 +1,36 @@
+#include<algorithm>
+#include<vector>
+#include <stdio.h>
+#include<iostream>
+using namespace std; 
+int main()  
+{  
+    int n,m,c=0;
+    while(scanf("%d%d",&n,&m)==2 && n)
+    {
+        vector <int> v1,v2;
+        int a,j;
+        while(n--)
+        {
+            scanf("%d",&a);
+            v1.push_back(a);
+        } 
+        sort(v1.begin(),v1.end());
+        while(m--)
+        {
+            scanf("%d",&a);
+            v2.push_back(a);
+        }
+        sort(v1.begin(),v1.end()); 
+        printf("CASE# %d:\n",++c);
+        for(j=0;j<v2.size();j++)
+        {
+            int p=lower_bound(v1.begin(),v1.end(),v2[j])-v1.begin();
+            if(v1[p]==v2[j])
+                printf("%d found at %d\n",v2[j],p+1);
+            else
+                 printf("%d not found\n",v2[j]);
+        }
+    }
+    return 0;  
+}

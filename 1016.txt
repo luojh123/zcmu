@@ -1,0 +1,27 @@
+#include <iostream> 
+using namespace std;  
+int main () 
+{
+	int n,m,a,i;
+	double s1,s2;
+	while(cin>>n>>a)
+	{
+		if(n==0&&a==0)
+			break;
+		s1=s2=1; i=0;
+		if ((2*a)>n) m=n-a;
+		else m=a;
+	  while (i<m)
+        {                           
+            s1=s1*n;
+            n--; 
+            i++;
+        }
+        for(i=1;i<=m;i++)
+        {
+            s2=s2*i;
+        }
+        cout<<long (s1/s2)<<endl;
+	}
+	return 0;   
+}

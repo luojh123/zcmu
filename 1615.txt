@@ -1,0 +1,41 @@
+#include<algorithm>
+#include<iostream>
+using namespace std;
+struct Q
+{
+    int begin;
+    int end;
+ 
+    bool operator < (const Q &x)  const{     
+        return end < x.end;
+    }
+};
+int main()
+{
+    Q x[1000+5];
+    int n;
+    while(cin>>n)
+    {
+        int i,a,b,s,count=1;
+        for(i=0;i<n;i++)
+        {
+            cin>>a>>b;
+            if(a>b)
+                swap(a,b);
+            x[i].begin=a;
+            x[i].end=b;
+        }
+        sort(x,x+n); 
+        s=x[0].end;
+        for(i=1;i<n;i++)
+        {
+            if(s<x[i].begin)
+            {
+                count++;
+                s=x[i].end;
+            }
+        }
+        cout<<n-count<<endl;
+    }
+    return 0;
+}

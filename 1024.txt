@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;  
+int max(int a,int b) 
+{
+	return (a>b?a:b);
+}
+int main()  
+{  
+	int i,r,a[5];
+	int S,R,C,maxi;
+	cin>>r;
+	while(r--)
+	{
+		for(i=1;i<=4;i++)
+			cin>>a[i];
+		S=a[1]*a[1];
+		R=a[2]*a[3];
+		C=a[4]*a[4]*3.1415;
+		maxi=max(S,max(R,C));
+		if (maxi==S) cout<<"Square"<<endl;
+		else if (maxi==R) cout<<"Rectangle"<<endl;
+		else if (maxi==C) cout<<"Circle"<<endl;
+	}
+	return 0;
+} 

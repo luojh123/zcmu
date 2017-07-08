@@ -1,0 +1,24 @@
+#include <iostream>
+#include<iomanip>
+#include <cmath>
+using namespace std;
+int main ()
+{ 
+	int n,i;
+    double area,perimeter,a,b,c,A;
+	cin>>n;
+	for(i=1;i<=n;i++)
+	{   
+		cin>>a>>b>>c;
+		if(a<b+c && b<a+c && c<a+b) 
+		{				
+			A=(a+b+c)/2.0 ;
+			area=sqrt(A*(A-a)*(A-b)*(A-c));		
+			perimeter=a+b+c;
+			cout<<setiosflags(ios::fixed)<<setprecision(2)
+		   	<<"area="<<area<<"; "<<"perimeter="<<perimeter<<endl;
+		}
+		else cout<<"These sides do not correspond to a valid triangle"<<endl;	
+	}
+	return 0;
+}

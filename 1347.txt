@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a[30],b[30],c[25]={1,1};
+    a[0]=1;a[1]=0;
+    b[0]=0;
+    int k;
+    for(k=2;k<30;k++)
+      c[k]=c[k-1]+c[k-2];
+    for (k=2;k<30;k++)
+       a[k]=c[k-2];
+    for (k=1;k<30;k++)
+       b[k]=c[k-1];
+   int i,Gi,j,Gj;
+    while(cin>>i>>Gi>>j)
+    {   
+        float t=0,t1=0;
+        if(i==1) t=Gi;
+        else if (i>1)
+        {
+            t=(Gi-a[i])/b[i];
+            t1=(Gi-a[i])%b[i];
+        }
+ 
+        if(t<=0 || t1!=0) cout<<"-1\n";
+        else
+        {
+            if(j==1) Gj=t;
+            else if(j>1) 
+            {
+                Gj=a[j]+b[j]*t;
+            }
+            cout<<Gj<<endl;
+        }
+    }
+    return 0;
+}

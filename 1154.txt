@@ -1,0 +1,31 @@
+#include<cstring>
+#include<iostream>
+using namespace std;
+int main()
+{
+    int c[110];
+    int N,a,b;
+    while(cin>>N && N)
+    {
+        memset(c,0,sizeof(c));
+        int i,j;
+        for(i=0;i<N;i++)
+        {
+            cin>>a>>b;
+            for(j=a;j<=b;j++)
+                c[j]++;
+        }
+        int f=0;
+        for(i=1;i<=N;i++)
+        {
+            if (!f)
+            {
+                cout<<c[i];
+                f=1;
+            }
+            else cout<<" "<<c[i];
+        }
+        cout<<endl;
+    }
+    return 0;
+}

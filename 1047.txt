@@ -1,0 +1,18 @@
+#include <iostream> 
+using namespace std;  
+int main () 
+{
+	int n,i,j,sum;
+	while(cin>>n)
+	{
+		i=1;sum=1;j=0;
+		while(sum<n)
+		{
+			sum=sum+i;
+			i=i*2;
+			j++;
+		}
+		cout<<j<<endl;
+	}
+	return 0;   
+}

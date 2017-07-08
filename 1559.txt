@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    while(cin>>n)
+    {
+        int a=0,res=0;
+        do
+        {
+            res++;
+            a=a%n*10+1;      
+        }while( (a%n) !=0);
+        cout<<res<<endl;
+    }
+    return 0;
+}

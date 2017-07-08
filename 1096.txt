@@ -1,0 +1,34 @@
+#include<string>
+#include<stdio.h>
+#include <iostream>
+using namespace std;
+int main()
+{
+	int r,a,n,m,i;
+	cin>>r;
+	while(r--)
+	{
+		string s1,s2;	
+		char s3[1000];
+		cin>>n>>m;
+		if (n==1) cout<<'1'<<" ";
+		for(a=n;a<=m;a++)
+		{	
+			int s=0;
+			for(i=1;i<a;i++)
+			{
+				if(a%i==0)
+					s=s+i;
+			}
+			if(s==a)
+			{
+				sprintf(s3,"%d",a);
+				s1=s1+s3+" ";
+			}
+		}
+			int len=s1.length();
+			s2=s1.substr(0,len-1);
+			cout<<s2<<endl;   
+	}
+	return 0;
+}

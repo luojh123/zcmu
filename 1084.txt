@@ -1,0 +1,24 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int r,i,j;
+	float a,b,t,n,sum;
+	cin>>r;
+	for(i=1;i<=r;i++)
+	{
+		a=2,b=1,j=0,sum=0;
+		cin>>n;
+		while(j<n)
+		{
+			sum=sum+a/b;
+			t=b;
+			b=a;
+			a=a+t;
+			j++;
+		}
+	cout<<setiosflags(ios::fixed)<<setprecision(2)<<sum<<endl;
+	}
+	return 0;
+}

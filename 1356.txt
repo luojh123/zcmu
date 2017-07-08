@@ -1,0 +1,31 @@
+#include<string>
+#include<stdio.h>
+#include <iostream>
+using namespace std;
+#define N 10000
+int main()
+{
+	
+	int i,a[N]={1,1};
+	for (i=2;i<N;i++)
+	  a[i]=a[i-2]+a[i-1];
+	int r,n,m;
+	cin>>r;
+	while(r--)
+	{
+		char s[N];
+		string s1,s2;
+		int j=0;
+		cin>>n>>m;
+		for (i=0;i<N-1;i++)
+			if (a[i]>=n && a[i]<=m) 
+			{
+				sprintf(s,"%d",a[i]);
+				s1=s1+s+" ";
+			}
+			int len=s1.length();
+			s2=s1.substr(0,len-1);
+			cout<<s2<<endl;
+	}
+	return 0;
+}

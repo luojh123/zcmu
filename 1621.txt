@@ -1,0 +1,35 @@
+#include <iostream> 
+using namespace std; 
+int f(int n)
+{
+    return (n==1)?1:f(n/2)+1;
+}
+int main()
+{
+    int n;
+    while(cin>>n)
+    {
+        cout<<f(n)<<endl;
+    }
+    return 0;
+}
+
+
+
+
+
+#include<stdio.h>
+int F(int n)
+{
+    return n == 1 ? 1 : F(n/2) + 1;
+}
+  
+int main ()
+{
+    int n;
+    while(~scanf("%d" ,&n))
+    {
+       printf("%d\n" ,F(n));
+    }
+    return 0;
+}

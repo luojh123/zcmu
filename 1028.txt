@@ -1,0 +1,78 @@
+//解一
+#include <iostream>
+using namespace std;
+#define N 100
+void tran(int num) 
+{ 
+    int arr[N],i; 
+    const int k=16;
+    for (i=0;i <N;i++) 
+    { 
+        arr[i]=num%k; 
+        num=num/k; 
+        if (num==0) 
+            break; 
+    } 
+    for (;i>=0;i--) 
+        switch (arr[i]) 
+        { 
+        case 10: cout<<"A";break; 
+        case 11: cout<<"B";break; 
+        case 12: cout<<"C";break; 
+        case 13: cout<<"D";break; 
+        case 14: cout<<"E";break; 
+        case 15: cout<<"F";break; 
+        default: cout<<arr[i]; 
+        } 
+    cout<<endl; 
+} 
+int main()
+{
+    int n,num;
+    cin>>n;
+    while(n--)
+    {
+        cin>>num; 
+        tran(num);
+    }
+    return 0;
+}
+
+
+
+
+//解二
+#include <stack>
+#include <iostream>
+using namespace std;
+int main()
+{
+    stack <int> s;
+    int n,num;
+    cin>>n;
+    while(n--)
+    {
+        cin>>num;
+        while(num)
+        {
+            s.push(num%16);
+            num/=16;
+        }
+        while(!s.empty())
+        {
+            switch (s.top()) 
+            { 
+            case 10: cout<<"A";break; 
+            case 11: cout<<"B";break; 
+            case 12: cout<<"C";break; 
+            case 13: cout<<"D";break; 
+            case 14: cout<<"E";break; 
+            case 15: cout<<"F";break; 
+            default: cout<<s.top();
+            } 
+            s.pop();
+        }
+        cout<<endl;
+    }
+    return 0;
+}

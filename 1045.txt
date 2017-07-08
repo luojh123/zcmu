@@ -1,0 +1,18 @@
+#include <iomanip>
+#include <iostream>
+using namespace std;
+int main()
+{
+	double m,n,p;
+	while(cin>>m>>n)
+	{
+		p=(m-n*28)/m;
+		if (p<0) cout<<"impossible"<<endl;
+		else
+		{
+			cout<<setiosflags(ios::fixed)<<setprecision(2);
+			cout<<p*100<<"%"<<endl;
+		}
+	}
+	return 0;
+}

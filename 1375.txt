@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+int f(int n)
+{
+    if (n / 5 == 0)
+        return 0;
+    return n / 5 + f(n / 5);
+}
+int main()
+{
+    int i;
+    int k, mid;
+    while (cin >> k)
+    {
+        int flag = 0;
+        int a = 0, b = 1000000000;
+        while (a <= b)
+        {
+            mid = (a + b) / 2;
+            if (k<f(mid))
+                b = mid - 1;
+            else if (k>f(mid))
+                a = mid + 1;
+            else
+            {
+                flag = 1;
+                break;
+            }
+  
+        }
+        if (flag == 0)
+            cout<<"No solution\n";
+        else {
+            for (i = mid - 1; i >= 0; i--)
+            {
+                if (f(i) != k)
+                {
+                    cout << i + 1 << endl;
+                    break;
+                }
+            }
+        }
+    }
+    return 0;
+ }

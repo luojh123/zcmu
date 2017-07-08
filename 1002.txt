@@ -1,0 +1,61 @@
+#include"stdio.h"
+#include"string.h"
+char cip[500001],conv[26];
+int main()
+{
+	int n,len,i,j,k,flag,flag1,temp;
+	while(scanf("%d",&n)!=EOF)
+	{
+		memset(conv,0,sizeof(conv));
+		memset(cip,0,sizeof(cip));
+		getchar();
+		while(n--)
+		{
+			scanf("%s",conv);
+			scanf("%s",cip);
+			len=strlen(cip);
+			j=0;
+			flag1=0;
+			if(len%2==0)   //在这里要判断一下截取的信息的长度是否为奇数，如果为奇数 
+ //则要从一半的后面一个字母开始，不然最后一个会与中间的比较，这样中间的就比较了两次 
+				temp=len/2;
+			else
+				temp=len/2+1;
+			for(i=temp;i<len;i++)
+			{
+				if(conv[cip[i]-'a']!=cip[j])
+					continue;
+				else
+				{
+					flag=0;
+					j++;
+					for(k=i+1;k<len;k++)
+					{
+						if(conv[cip[k]-'a']!=cip[j++])
+						{
+							flag=1;
+							break;
+						}
+					}
+					if(flag==0)
+					{
+						flag1=1;
+						break;
+					}
+				}          //else
+				
+			}                //for
+			int y,x;
+			for(y=0;y<i;y++)
+				printf("%c",cip[y]);
+			for(y=0;y<i;y++)
+			{
+				for(x=0;x<26;x++)
+					if(cip[y]==conv[x])
+						printf("%c",x+'a');
+			}
+			printf("\n");
+		}
+	}
+	return 0;
+}

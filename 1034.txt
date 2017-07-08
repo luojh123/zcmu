@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <cstring>
+#include <cmath>
+#define MAXX 1000000
+int a[MAXX+1];
+void isPrime()
+{
+    a[0] = a[1] = 1;
+    memset(a, 0, sizeof(a));
+    for(int i = 2; i <= MAXX; i++)
+    {
+        if(!a[i])
+        {
+            for(int j = i + i; j <= MAXX; j += i)
+            {
+                a[j] = 1;
+            }
+        }
+    }
+}
+int main()
+{
+    int n;
+    long long ans;
+    isPrime();
+	scanf("%d",&n);
+    while(n--)
+    {
+		scanf("%lld",&ans);
+        long long temp = sqrtl(ans) + 0.5;
+        if(ans > 1 && temp * temp == ans && a[temp] == 0)
+        {
+			printf("%s\n","YES");
+        }
+        else
+        {
+			printf("%s\n","NO");
+        }
+    }
+    return 0;
+}

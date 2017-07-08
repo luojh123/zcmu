@@ -1,0 +1,28 @@
+#include <cstring>
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a[25];
+	int n;
+	while(cin>>n)
+	{
+		int b,i,j=0;
+		memset(a,0,sizeof(a));
+		for(i=0;i<n;i++)
+		{
+			cin>>b;
+			a[b]++;
+		}
+		for(i=20;i>=1;i--)
+		{
+			if(a[i]) j++;
+			if(j==5) 
+			{
+				cout<<a[i]<<endl;
+				break;
+			}
+		}
+	}
+	return 0;
+}

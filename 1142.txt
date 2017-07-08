@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int gcd(int a,int b)
+{
+  while(b!=0)
+  {
+    int t=a%b;
+    a=b;
+    b=t;
+  }
+  return a;
+}
+int main()
+{
+  int x,y;
+ while(cin>>x>>y)
+ {
+     if(x==y)   cout<<1<<endl;
+     else{
+     int v=x*y;
+     int s=(int)sqrt(v);
+     int n=0;
+     for(int i=x; i<=s; i++)
+         if((v%i==0)&&(gcd(v/i,i)==x)) 
+             n++;
+         cout<<2*n<<endl;
+     }
+ }
+ return 0;
+}

@@ -1,0 +1,54 @@
+#include<cstring>
+#include <iostream>
+using namespace std;
+#define ran 1010101 
+int a,b,k;
+bool p[ran];
+int s[ran];
+int ans;
+int i,j;
+
+void sieve()
+{
+	memset(p,true,sizeof p);
+	p[1]=false;
+	for(i=2;i<=b;i++)
+		if(p[i])
+        {
+			for(j=i+i;j<=b;j+=i)
+				p[j]=false;
+		}
+	memset(s,0,sizeof s);
+	for(i=1;i<=b;i++)
+		s[i]=s[i-1]+p[i];
+}
+
+bool check(int l)
+{
+	for(i=a;i+l-1<=b;i++)
+		if(s[i+l-1]-s[i-1]<k)
+			return false;
+	return true;
+}
+int main()
+{
+	while(cin>>a>>b>>k)
+	{
+		sieve();	
+		int lo=1,hi=b-a+1;
+		ans=-1;
+		while(lo<=hi)    //二分查找最小的L
+		{
+			int mi=(lo+hi)/2;
+			if(check(mi))   //如果符合 则往左查找
+			{
+				ans=mi;
+				hi=mi-1;
+			}
+			else        //否则向右查找
+				lo=mi+1;
+		}
+		cout<<ans<<endl;
+	}
+	return 0;
+}

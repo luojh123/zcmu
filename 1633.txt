@@ -1,0 +1,43 @@
+#include<algorithm>
+#include<string>
+#include<cstring>
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,t=0;
+    while(cin>>n)
+    {
+        t++;
+        int count=0;
+        while(n--)
+        {
+            string s;
+            cin>>s;
+            int i,j=0,f=1;
+            int a[30],b[30];
+            memset(a,0,sizeof(a));
+            for(i=0;i<s.length();i++)
+            {
+                a[s[i]-'a']++;
+            }
+            for(i=0;i<30;i++)
+            {
+                if(a[i]!=0)
+                    b[j++]=a[i];
+            }
+            if(j==1) continue;
+            sort(b,b+j);
+            for(i=0;i<j-1;i++)
+            {
+                if(b[i]==b[i+1])
+                {
+                    f=0;break;
+                }
+            }
+            if(f) count++;
+        }
+        cout<<"Case "<<t<<": "<<count<<endl;
+    }
+    return 0;
+}

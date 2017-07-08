@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n,i,a;
+	cin>>n;
+	for(i=1;i<=n;i++)
+	{
+		cin>>a;
+		if (a>=60) cout<<"Pass"<<endl;
+		else cout<<"Fail"<<endl;
+	}
+	return 0;
+}

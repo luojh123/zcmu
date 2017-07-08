@@ -1,0 +1,29 @@
+#include<iostream>  
+#include <string>  
+using namespace std;  
+int main()  
+{  
+	string str1,str2;      
+	str1="Dear SZD: You just don¡¯t know how much I love you. You are the best girlfriend any boy could ever ask for. Whenever I have a problem and need some type of comfort, you are there for me. It is you who I want to spend the rest of my life with. You just don¡¯t understand how much I love you, appreciate you, admire you, trust you, respect you, and over all love you. I believe this is it, you are the one for me. Being away from you drives me crazy and makes me want to be with you right at this very instant. Well, honey, I am going to end this letter with I love you more than anything in this world. Remember that now, in the last I love you, today I love you, and I still love you in the future.ZDD"; 
+	str2="love";  
+
+	int weizhi = 0;  
+	int count = 0;  
+	while (1)  
+	{  
+		weizhi=str1.find(str2,weizhi);  
+		weizhi++;  
+		if (0 == weizhi)  
+		{  
+			break;  
+		}  
+		else  
+		{  
+			count++;  
+		}  
+	}  
+
+	cout<<count<<endl;  
+	return 0;  
+
+}  

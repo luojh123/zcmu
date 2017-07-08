@@ -1,0 +1,56 @@
+#include<cmath>  
+#include<algorithm>
+#include <iostream>   
+using namespace std;   
+const int MAX=100000+100;  
+ 
+struct haha  
+{  
+    int s;  
+    int b;  
+    int id;  
+    bool operator<(const haha &x)const 
+	{  
+        return b<x.b;  
+    }  
+}map[MAX];  
+long long  a[MAX];  
+long long  ans[MAX],mid[MAX];  
+
+int main()  
+{  
+    int n,i,j,k,m,l,t;  
+    while(cin>>n)  
+    {  
+          for(i=0;i<n;i++)  
+              cin>>a[i];   
+		  cin>>m;  
+          for(i=0;i<m;i++)  
+          {  
+               cin>>map[i].s>>map[i].b;  
+               map[i].id=i;  
+          }   
+           sort(map,map+m);
+          for(i=j=0;i<m && map[i].b<400;i=j)//400是对10的5次方取根号大约得到的数,别用根号下m  
+          {  
+               while(j<m && map[i].b==map[j].b) j++;  
+               for(l=n-1;l>=0;l--)  
+               {  
+                   if(l+map[i].b<n)  mid[l]=mid[l+map[i].b]+a[l];  
+                   else mid[l]=a[l];  
+               }  
+               for(t=i;t<j;t++)  
+                   ans[map[t].id]=mid[map[t].s-1];  
+  
+          }  
+          while(i<m)  
+          {  
+              long long  tmp=0;  
+              for(k=map[i].s-1;k<n;k+=map[i].b) tmp+=a[k];  
+              ans[map[i++].id]=tmp;  
+          }  
+          for(i=0;i<m;i++) 
+			  cout<<ans[i]<<endl;  
+    }  
+    return 0;  
+}  

@@ -1,0 +1,23 @@
+#include <iomanip>
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   int n,m;
+   while(cin>>n>>m)
+   {
+       double ans=0;
+       for(int i=1;i<n;i++)
+       {
+           double pos=(double)i/n*(n+m);   //第i个点在n+m长度的数轴上的对应位置,
+                                               //其中*（m+n)是为了与下面求和通分
+           ans+=fabs(pos-floor(pos+0.5))/(n+m);//放缩坐标系   floor(pos+0.5))/(n+m) 
+		                               // 找到离这个对应坐标的最近一个点,取得距离,累加移动距离
+       }
+	   cout<<setiosflags(ios::fixed)<<setprecision(4);
+       cout<<(ans*10000)<<endl;
+   }
+   return 0;
+}

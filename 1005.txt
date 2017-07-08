@@ -1,0 +1,36 @@
+#include<iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std;  
+int main()  
+{  
+    double m,n,a; 
+	while(cin>>m)
+	{
+		cin>>n>>a;
+		cout<<setiosflags(ios::fixed)<<setprecision(0)<<ceil(m/a)*ceil(n/a);  
+		cout<<endl;
+	}
+	return 0;
+}  
+
+
+
+#include <iostream>  
+using namespace std;  
+int main()  
+{  
+    int a,m,n,mm,nn;  
+    while(cin>>m)  
+    {  
+        cin>>n>>a;  
+        mm=m/a;  
+        if(m%a!=0)  
+        mm++;  
+       nn=n/a;  
+       if(n%a!=0)  
+       nn++;  
+       cout<<mm*nn<<endl;  
+    }        
+    return 0;  
+}

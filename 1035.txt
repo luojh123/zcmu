@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+int main()
+{
+    int m,i;
+    long long t,n;
+    while(cin>>n)
+    {
+       n--;
+       i=0;m=9;
+       while(n>=m)
+       {
+            if(i%2==0)
+            { n/=9;m=2;}
+            else
+            { n/=2;m=9;}
+            i++;
+       }
+       puts(i%2?"Ollie wins.":"Stan wins.");
+    }
+	return 0;
+}

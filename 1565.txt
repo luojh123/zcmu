@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,m;
+    int T;
+    cin>>T;
+    while(T--)
+    {   
+        cin>>n>>m;
+        cout<<(n+1)*n/2 * (m+1)*m/2;
+        cout<<endl;
+    }
+    return 0;
+}

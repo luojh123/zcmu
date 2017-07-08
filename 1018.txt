@@ -1,0 +1,37 @@
+#include <vector>
+#include <algorithm>
+#include <iostream>
+using namespace std;
+struct Job
+{
+	int j,b;
+	Job(int m,int n):j(m),b(n){}  //构造函数
+	bool operator < (const Job &x) const  //重载运算符<
+	{
+		return j>x.j;
+	}
+};
+int main()
+{
+	int n,b,j,k=1;
+	while (cin>>n && n)
+	{
+		int i;
+		vector <Job> v;
+		for(i=0;i<n;i++)
+		{
+			cin>>b>>j;
+			Job job(j,b);//以j,b构造Job对象job,形参的顺序看构造函数
+            v.push_back(job);  
+		}
+		sort(v.begin(),v.end());//使用Job类重载的<运算符排序
+		int s=0,ans=0;
+		for (i=0;i<n;i++)
+		{
+			s+=v[i].b;
+			ans=max(ans,s+v[i].j);
+		}
+		cout<<"Case "<<k++<<": "<<ans<<endl;
+	}
+	return 0;
+}

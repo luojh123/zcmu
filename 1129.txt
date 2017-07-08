@@ -1,0 +1,35 @@
+#include<cmath>     
+#include<iostream>
+using namespace std;
+const double PI=acos(-1.0),e=exp(1.0);
+int main()
+{
+    int n;
+    while(cin>>n)
+    {
+        if (n==0)   cout<<1;
+        else   cout<< (int)(log10(sqrt(2*PI*n))+n*log10(n/e))+1;//斯特林公式
+        cout<<endl;
+    }
+    return 0;
+}
+
+
+
+
+#include<cmath>     
+#include<iostream>
+using namespace std;
+const double PI=acos(-1.0),e=exp(1.0);
+int main()
+{
+    int n;
+    while(cin>>n)
+    {
+        if (n==0)   cout<<1;
+        else   cout<< (int)(log10(sqrt(2*PI*n))+n*log10(n/e))+1;//斯特林公式
+        cout<<endl;
+    }
+    return 0;
+}
+ 

@@ -1,0 +1,22 @@
+#include <algorithm>
+#include <list>
+#include <iostream>
+using namespace std;
+int main()
+{
+	list<int>l;
+	int r,i,n,a;
+	cin>>r;
+	for(i=1;i<=r;i++)
+	{
+		cin>>n;
+		l.clear();
+		while (n--)
+		{
+			cin>>a;
+			l.push_back(a);
+		}
+		cout<<*max_element(l.begin(),l.end())<<endl;
+	}
+	return 0;
+}

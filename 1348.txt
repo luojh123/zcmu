@@ -1,0 +1,25 @@
+#include <math.h>
+#include <stdio.h>
+  
+void divide(int num)
+{
+    int i,a,count=1;
+    for(i=2;i<=sqrt((float)num)*2;i++)
+    {
+        if((num-i*(i-1)/2)%i==0)
+        {
+            a=(num-i*(i-1)/2)/i;
+            if(a>0)
+                count++;    
+        }
+    } 
+    printf("%d\n", count);
+}
+  
+int main()
+{
+   int num;
+   while(~scanf("%d",&num))
+       divide(num);
+    return 0;
+}
